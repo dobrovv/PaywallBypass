@@ -5,8 +5,14 @@
     -->
     <title>Paywall Bypass</title>
 
+     <!-- Load the application files -->
+    <link href="./style.css" rel="stylesheet">
+    <script defer type="text/javascript" src="./PaywallBypass.js"></script>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 
   </head>
 
@@ -62,101 +68,7 @@
     </div>
     
 
-    <script>
-
-      function onSearchClick() {
-        var articleUrlInput = window.document.getElementById("articleUrlInput");
-        var navbarToggleButton = window.document.getElementById("navbarToggleButton");
-
-
-        articleIframe.src = articleUrlInput.value;
-        //articleIframe.style.minHeight  = "85vh";
-        //articleIframe.style = "position: relative; top: 0; left: 0; width: 100%; height: 100vh;"
-      }
-
-      function onFrameLoad() {
-        new bootstrap.Collapse(window.document.getElementById("navbarToggleExternalContent"))
-        var navbarToggleButton = window.document.getElementById("navbarToggleButton").classList.add("show");
-      }
-
-      // watch for iframe src change events
-      new MutationObserver(function(mutations) {
-        mutations.some(function(mutation) {
-          if (mutation.type === 'attributes' && mutation.attributeName === 'src') {
-            //console.log(mutation);
-            //console.log('Old src: ', mutation.oldValue);
-            //console.log('New src: ', mutation.target.src);
-            onFrameLoad()
-            return true;
-          }
-
-          return false;
-        });
-      }).observe(document.body, {
-        attributes: true,
-        attributeFilter: ['src'],
-        attributeOldValue: true,
-        characterData: false,
-        characterDataOldValue: false,
-        childList: false,
-        subtree: true
-      });
-
-    </script>
-
-    <style>
-
-    h1 {
-      letter-spacing: 3px;
-      font-family: Times;
-      font-variant-caps: small-caps;
-    }
-
-      #navbarToggleButton {
-        opacity:0;
-        margin-left:-200px;
-
-      }
-
-      #navbarToggleButton.show{
-        opacity:1;
-        transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
-        margin-left: 0px;
-      }
-
     
-      input  {
-          background: rgba(255,255,255,0.9)!important;
-      }
-
-      #button-addon2:not(:hover) {
-        background: rgba(255,255,255,0.8)!important;
-      }
-
-      .input-group {
-        /*background: linear-gradient(-45deg, #ee775280, #e73c7e80, #23a6d580, #23d5ab80);background:linear-gradient(-0.25turn, #3f87a6, #ebf8e1, #f69d3c);*/ 
-      /**/
-        background:linear-gradient(45deg, #ffffff, #ced7ff, #ffffff, #f69d3c);
-        background-size: 400% 400%;
-        border-radius: 0.5rem;
-        animation: gradient 15s ease infinite;
-      }
-        
-
-
-      @keyframes gradient {
-          0% {
-              background-position: 0% 50%;
-          }
-          50% {
-              background-position: 100% 50%;
-          }
-          100% {
-              background-position: 0% 50%;
-          }
-      }
-
-    </style>
   </body>
 
 </html>

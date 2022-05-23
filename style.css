@@ -1,0 +1,51 @@
+h1 {
+  letter-spacing: 3px;
+  font-family: Times;
+  font-variant-caps: small-caps;
+}
+
+  #navbarToggleButton {
+    opacity:0;
+    margin-left:-200px;
+
+  }
+
+  #navbarToggleButton.show{
+    opacity:1;
+    transition: all 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.5s;
+    margin-left: 0px;
+  }
+
+
+  input  {
+      background: rgba(255,255,255,0.9)!important;
+  }
+
+  #button-addon2:not(:hover) {
+    background: rgba(255,255,255,0.8)!important;
+  }
+
+  .input-group {
+    /*background: linear-gradient(-45deg, #ee775280, #e73c7e80, #23a6d580, #23d5ab80);background:linear-gradient(-0.25turn, #3f87a6, #ebf8e1, #f69d3c);*/ 
+  /**/
+
+    border-radius: 0.5rem;
+    /* Background gradient transition animation */
+    background:linear-gradient(45deg, #ffffff, #ced7ff, #ffffff, #f69d3c);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+    
+
+  /* Background gradient transition animation */
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
